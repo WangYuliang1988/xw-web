@@ -1,0 +1,16 @@
+{
+  "name": "xw-web",
+  "version": "1.0.0",
+  "description": "Tools written by JavaScript to deploy projects.",
+  "main": "deploy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yuliang Wang",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.11.5",
+    "ssh2": "^1.11.0",
+    "tar": "^6.1.11"
+  }
+}
