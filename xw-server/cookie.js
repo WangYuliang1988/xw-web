@@ -54,4 +54,15 @@ async function getUserFromCookie(ctx) {
   return user;
 }
 
-module.exports = { COOKIE_NAME, putUserToCookie, getUserFromCookie }
+/**
+ * 从cookie中删除当前登录用户信息
+ * @param {Object} ctx 
+ */
+function deleteUserFromCookie(ctx) {
+  ctx.cookies.set(COOKIE_NAME, '', {
+    maxAge: 0,
+    httpOnly: true
+  });
+}
+
+module.exports = { COOKIE_NAME, putUserToCookie, getUserFromCookie, deleteUserFromCookie }

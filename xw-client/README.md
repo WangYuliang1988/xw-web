@@ -72,3 +72,5 @@ Vuex 的核心是 store，store 存储并管理着需要被 Vue 组件共享的�
 Vuex 和全局对象的对象有以下两点不同：
 1. Vuex 的状态存储是响应式的，当 Vue 组件从 store 中读取状态的时候，若 store 中的状态发生变化，那么组件也会相应地得到更新。
 2. store 中状态的改变，只能通过显式地提交（commit）mutation 实现，无法通过直接赋值等方式改变 store 中的状态。
+
+**注意**：通过 npm install 安装 Vuex 时，关注 Vuex 的版本问题，Vuex 4 配对 Vue 3，Vuex 3 配对 Vue 2，否则在使用 Vuex 时将报错。

@@ -48,7 +48,7 @@ const blogApis = [{
       order: [
         ['createTime',  'DESC']
       ]
-    });
+    })
     for (const comment of comments) {
       comment.html = transformText(comment.content);
     }
@@ -85,7 +85,9 @@ const blogApis = [{
       userImage: user.image,
       name: name.trim(),
       summary: summary.trim(),
-      content: content.trim()
+      content: content.trim(),
+      createTime: Date.now() / 1000, // 数据库初建时存的时间是秒数而非毫秒数，为兼容老的数据需进行此处理
+      html: transformText(content.trim())
     });
   }
 }, {
@@ -114,7 +116,8 @@ const blogApis = [{
     await Blog.update({
       name: name.trim(),
       summary: summary.trim(),
-      content: content.trim()
+      content: content.trim(),
+      html: transformText(content.trim())
     }, {
       where: {
         id: id

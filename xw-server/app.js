@@ -35,8 +35,6 @@ app.use(async (ctx, next) => {
 app.use(async (ctx, next) => {
   // 解析cookie并绑定用户信息
   ctx.state.user = await getUserFromCookie(ctx);
-  // 设置允许跨域调用
-  ctx.set('Access-Control-Allow-Origin', '*');
 
   await next();
 });

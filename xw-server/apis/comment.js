@@ -3,7 +3,7 @@
 
 const Blog = require('../models/blog');
 const Comment = require('../models/comment');
-const { APIError, parsePage, checkAdmin, generateId } = require('../util');
+const { APIError, parsePage, checkAdmin, generateId, transformText } = require('../util');
 
 const commentApis = [{
   url: '/api/comments', // 分页获取评论列表，，/api/comments?page=2&size=10
@@ -57,7 +57,9 @@ const commentApis = [{
       userId: user.id,
       userName: user.name,
       userImage: user.image,
-      content: content.trim()
+      content: content.trim(),
+      createTime: Date.now() / 1000, // 数据库初建时存的时间是秒数而非毫秒数，为兼容老的数据需进行此处理
+      html: transformText(content.trim())
     });
   }
 }, {

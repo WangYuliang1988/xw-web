@@ -3,7 +3,7 @@
 
 const crypto = require('crypto');
 const User = require('../models/user');
-const { putUserToCookie } = require('../cookie');
+const { putUserToCookie, deleteUserFromCookie } = require('../cookie');
 const { APIError, parsePage, generateId } = require('../util');
 
 const userApis = [{
@@ -95,7 +95,8 @@ const userApis = [{
       name: name.trim(),
       email: email,
       passwd: crypto.createHash('sha1').update(passwd).digest('hex'),
-      image: `/static/images/profile-${Math.floor(Math.random() * 9) + 1}.jpg`
+      image: `/static/images/profile-${Math.floor(Math.random() * 9) + 1}.jpg`,
+      createTime: Date.now() / 1000, // 数据库初建时存的时间是秒数而非毫秒数，为兼容老的数据需进行此处理
     });
 
     // 写入cookie
@@ -103,6 +104,14 @@ const userApis = [{
 
     user.passwd = '******';
     ctx.body = user;
+  }
+}, {
+  url: '/api/users/logout', // 注销
+  method: 'GET',
+  fn: async ctx => {
+    // 删除cookie
+    deleteUserFromCookie(ctx)
+    ctx.body = { logout: 'success' }
   }
 }];
 

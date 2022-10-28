@@ -18,8 +18,7 @@ const User = sequelize.define('users', {
   image: DataTypes.STRING(512),
   createTime: {
     field: 'create_time',
-    type: DataTypes.DOUBLE,
-    defaultValue: Date.now() / 1000 // 数据库初建时存的时间是秒数而非毫秒数，为兼容老的数据需进行此处理
+    type: DataTypes.DOUBLE
   }
 }, {
   timestamps: false,
