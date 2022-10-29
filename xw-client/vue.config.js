@@ -6,6 +6,7 @@ const bootstrapSassAbstractsImports = require('vue-cli-plugin-bootstrap-vue/sass
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
+  productionSourceMap: false, // 设置生产环境打包时不生成 sourceMap 文件
   publicPath: process.env.NODE_ENV === 'production' ? '/reborn/view/' : '/', // 该应用部署在服务器的子路径/reborn/view/上，此处publicPath设置需保持一致
   css: {
 		loaderOptions: {

@@ -5,7 +5,7 @@ const path = require('path');
 const tar = require('tar'); // 用于文件打包压缩，参见：https://www.npmjs.com/package/tar
 const dayjs = require('dayjs'); // 用于日期格式化，参见：https://www.npmjs.com/package/dayjs
 const { exec, fastPut, login } = require('./utils/connect');
-const { TGZ_FILE_NAME, REMOTE_DIST_FILE, REMOTE_BASE_DIR, REMOTE_SRC_DIR } = require('./utils/constants');
+const { TGZ_FILE_NAME, REMOTE_DIST_FILE, REMOTE_BASE_DIR, REMOTE_SRC_DIR } = require('./utils/constants').server;
 
 login(async () => {
   console.log('Start deploying, please wait...');
