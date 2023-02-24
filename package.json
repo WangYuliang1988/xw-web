@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Tools written by JavaScript to deploy projects.",
   "main": "deploy.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "author": "Yuliang Wang",
   "license": "GPLv3",
   "dependencies": {
