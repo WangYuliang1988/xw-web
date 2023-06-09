@@ -1,8 +1,10 @@
 # 工程简介
+
 完全使用 JavaScript 语言开发的网站，前端基于 Vue 框架，后端基于 Node.js 框架。
 
 # 目录结构
-```python
+
+```sh
 xw-web/                         # 根目录
 |
 +- dist/                        # 存放前后端工程的打包文件，用于自动化部署
@@ -17,11 +19,13 @@ xw-web/                         # 根目录
 |  |
 |  +- question.js               # 提供命令行交互方法的工具类
 |
-+- xw-client/                   # 前端工程
++- xw-client-v2/                # 前端工程 Vue2 版本
+|
++- xw-client-v3/                # 前端工程 Vue3 版本
 |
 +- xw-server/                   # 后端工程
 |
-+- dp-client.js                 # 前端工程 xw-client 自动化部署脚本
++- dp-client.js                 # 前端工程 xw-client-v2 和 xw-client-v3 自动化部署脚本
 |
 +- dp-server.js                 # 后端工程 xw-server 自动化部署脚本
 |
@@ -29,7 +33,7 @@ xw-web/                         # 根目录
 |
 +- package.json                 # 自动化部署所需的依赖描述文件
 |
-+- rb-client.js                 # 前端工程 xw-client 自动化回滚脚本
++- rb-client.js                 # 前端工程 xw-client-v2 和 xw-client-v3 自动化回滚脚本
 |
 +- rb-server.js                 # 后端工程 xw-server 自动化回滚脚本
 ```

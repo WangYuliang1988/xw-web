@@ -69,7 +69,7 @@ const hideHeaderButtons = computed(() => {
         href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41019602002168"
         class="ml-2"
       >
-        <img src="/static/images/gongan.png" />豫公网安备41019602002168号
+        <img src="@/assets/gongan.png" />豫公网安备41019602002168号
       </a>
     </p>
   </footer>
