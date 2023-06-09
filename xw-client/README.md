@@ -1,3 +1,5 @@
+学文前端 Vue 2 实现版本
+
 # 工程简介
 基于 Vue.js 开发的 Web 前端工程，通过 Bootstrap 实现移动优先的响应式 UI。
 
@@ -16,7 +18,7 @@
 4. 在 xw-client 目录下执行：npm run serve，提示编译成功，完成。
 
 # 目录结构
-```python
+```sh
 xw-client/                      # 根目录
 |
 +- node_modules/                # 存放各依赖库

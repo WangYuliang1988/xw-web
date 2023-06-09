@@ -1,7 +1,7 @@
 <template>
   <div class="form-container">
     <!-- 通过v-on:submit.prevent，Vue将表单提交事件关联至onSubmit()方法 -->
-    <form class="form-register needs-validation"  @submit.prevent="onSubmit">
+    <form class="form-register"  @submit.prevent="onSubmit">
       <div class="mb-4 text-center">
         <img src="../assets/xuewen.png" alt="" width="72" height="72">
       </div>
@@ -17,11 +17,11 @@
       </div>
       <div class="mb-3">
         <label for="inputPassword" class="sr-only">输入密码</label>
-        <input class="form-control" type="password" id="inputPassword" v-model="passwd" placeholder="请设置登录密码（至少6个字符）" maxlength="32" minlength="6" required>
+        <input class="form-control" type="password" id="inputPassword" v-model="passwd" placeholder="请设置登录密码（至少6个字符）" maxlength="32" minlength="6" required autocomplete="on">
       </div>
       <div class="mb-3">
         <label for="reinputPassword" class="sr-only">再次输入密码</label>
-        <input class="form-control" type="password" id="reinputPassword" v-model="rePasswd" placeholder="请再次输入密码" maxlength="32" minlength="6" required>
+        <input class="form-control" type="password" id="reinputPassword" v-model="rePasswd" placeholder="请再次输入密码" maxlength="32" minlength="6" required autocomplete="on">
       </div>
       <button type="submit" class="btn btn-lg btn-primary btn-block mt-3" :disabled="disableSubmit">注册</button>
     </form>

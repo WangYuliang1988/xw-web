@@ -24,7 +24,7 @@
         <template v-else>
           <span class="text-muted">还没有人评论...</span>
         </template>
-        <form v-if="user" class="needs-validation mt-4" id="form-comment" v-on:submit.prevent="makeComment">
+        <form v-if="user" class="mt-4" v-on:submit.prevent="makeComment">
           <div class="mb-2">
             <label for="inputComment" class="sr-only">评论内容</label>
             <textarea class="form-control" v-model="inputComment" placeholder="说点什么吧" rows="6" required></textarea>

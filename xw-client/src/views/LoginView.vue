@@ -1,17 +1,17 @@
 <template>
   <div class="form-container">
-    <form class="form-signin needs-validation" @submit.prevent="onSubmit">
+    <form class="form-signin" @submit.prevent="onSubmit">
       <div class="mb-4 text-center">
         <img src="../assets/xuewen.png" alt="" width="72" height="72">
       </div>
       <p v-if="serverFeedback" class="server-feedback text-center">{{ serverFeedback }}</p>
       <div class="mb-3">
         <label for="inputEmail" class="sr-only">电子邮箱</label>
-        <input class="form-control" type="email" id="inputEmail" v-model="email" name="email" placeholder="电子邮箱" maxlength="128" required autofocus>
+        <input class="form-control" type="email" id="inputEmail" v-model="email" placeholder="电子邮箱" maxlength="128" required autofocus>
       </div>
       <div class="mb-3">
         <label for="inputPassword" class="sr-only">登录密码</label>
-        <input class="form-control" type="password" id="inputPassword" v-model="passwd" name="passwd" placeholder="登录密码" maxlength="32" minlength="6" required>
+        <input class="form-control" type="password" id="inputPassword" v-model="passwd" placeholder="登录密码" maxlength="32" minlength="6" required autocomplete="on">
       </div>
       <button type="submit" class="btn btn-lg btn-primary btn-block mt-3" :disabled="disableSubmit">登录</button>
       <p class="mt-3 mb-3 text-center text-muted"><span>没有账号？点击<router-link to="/register">注册</router-link></span></p>

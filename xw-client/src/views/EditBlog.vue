@@ -6,7 +6,7 @@
       <router-link class="p-2" to="/manage/comments">评论管理</router-link>
       <router-link class="p-2" to="/manage/users">用户管理</router-link>
     </nav>
-    <form class="form-blog needs-validation" v-on:submit.prevent="onSubmit">
+    <form class="form-blog" v-on:submit.prevent="onSubmit">
       <p v-if="serverFeedback" class="server-feedback text-center">{{ serverFeedback }}</p>
       <div class="mb-3">
         <label for="inputName" class="sr-only">日志标题</label>

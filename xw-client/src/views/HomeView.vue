@@ -4,16 +4,14 @@
       <div>
       <template v-if="blogs.length > 0">
         <div class="blog-post" v-for="blog in blogs" :key="blog.id">
-          <h2 class="blog-post-title"><router-link :to="`/blog/${blog.id}`" v-text="blog.name"></router-link></h2>
+          <h2 class="blog-post-title"><router-link :to="`/blog/${blog.id}`">{{ blog.name }}</router-link></h2>
           <p class="blog-post-meta" v-text="'发表于 ' + $dayjs(blog.createTime * 1000).format('YYYY-MM-DD HH:mm:ss')"></p>
           <p v-text="blog.summary"></p>
           <p><router-link :to="`/blog/${blog.id}`">继续阅读</router-link></p>
+          <button v-if="page.hasNext" class="btn btn-outline-primary mb-3" @click="fetchBlogs(++page.currentPage)">查看更多</button>
         </div>
       </template>
-      <template v-if="page.hasNext">
-        <button class="btn btn-outline-primary mb-3" @click="fetchBlogs(++page.currentPage)">查看更多</button>
-      </template>
-      <template v-if="blogs.length === 0">
+      <template v-else>
         <p>昔人已乘黄鹤去</p>
         <p>此地空余黄鹤楼</p>
         <p>黄鹤一去不复返</p>

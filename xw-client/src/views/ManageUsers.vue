@@ -16,7 +16,7 @@
               <th>注册时间</th>
             </tr>
           </thead>
-          <tbody id="userList">
+          <tbody>
             <tr v-for="user in users" :key="user.id">
               <td><span v-text="user.name"></span><template v-if="user.admin"><span class="text-admin ml-1">(管理员)</span></template></td>
               <td><a v-bind:href="'mailto:' + user.email" v-text="user.email"></a></td>
@@ -27,7 +27,7 @@
       </template>
       <template v-if="page.hasNext">
         <nav class="text-center">
-          <button class="btn btn-outline-primary my-2" id="btnMore" @click="fetchUsers(++page.currentPage)">加载更多</button>
+          <button class="btn btn-outline-primary my-2" @click="fetchUsers(++page.currentPage)">加载更多</button>
         </nav>
       </template>
       <template v-if="users.length === 0">

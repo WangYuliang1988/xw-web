@@ -18,7 +18,7 @@
           </thead>
           <tbody>
             <tr v-for="blog in blogs" :key="blog.id">
-              <td><router-link v-bind:to="'/blog/' + blog.id" v-text="blog.name"></router-link></td>
+              <td><router-link v-bind:to="'/blog/' + blog.id">{{ blog.name }}</router-link></td>
               <td><span v-text="blog.userName"></span></td>
               <td>
                 <button class="btn btn-sm btn-outline-primary ml-1 mr-1" v-on:click="editBlog(blog)">编辑</button>
@@ -30,7 +30,7 @@
       </template>
       <template v-if="page.hasNext">
         <nav class="text-center">
-          <button class="btn btn-outline-primary my-2" id="btnMore" @click="fetchBlogs(++page.currentPage)">加载更多</button>
+          <button class="btn btn-outline-primary my-2" @click="fetchBlogs(++page.currentPage)">加载更多</button>
         </nav>
       </template>
       <template>

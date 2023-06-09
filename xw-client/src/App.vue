@@ -22,7 +22,7 @@
       <router-view/>
     </main>
     <footer class="base-footer">
-      <p>Powered by <a href="https://github.com/WangYuliang1988" target="_blank">WangYuliang</a>. Copyright &copy; 2022.</p>
+      <p>Powered by <a href="https://github.com/WangYuliang1988" target="_blank">WangYuliang</a>. Copyright &copy; 2023.</p>
       <p>
         <a href="https://github.com/WangYuliang1988" target="_blank">WangYuliang</a>. All rights reserved.
         <a target="_blank" href="http://beian.miit.gov.cn/" class="ml-2">豫ICP备19016855号</a>
@@ -44,7 +44,7 @@ export default {
   },
   computed: {
     user() {
-      return this.$store.state.user
+      return this.$store.getters.user
     },
     hideHeaderButtons() {
       // 登录和注册页面需隐藏顶部按钮区域，同时设置标题居中
@@ -52,7 +52,7 @@ export default {
     }
   },
   created() {
-    console.log('xw-clinet started')
+    console.log('xw-client started')
   },
   methods: {
     async logout() {

@@ -16,7 +16,7 @@
               <th>操作</th>
             </tr>
           </thead>
-          <tbody id="commentList">
+          <tbody>
             <tr v-for="comment in comments" :key="comment.id">
               <td><span v-text="comment.userName"></span></td>
               <td><span v-text="comment.content"></span></td>
@@ -27,7 +27,7 @@
       </template>
       <template v-if="page.hasNext">
         <nav class="text-center">
-          <button class="btn btn-outline-primary my-2" id="btnMore" @click="fetchComments(++page.currentPage)">加载更多</button>
+          <button class="btn btn-outline-primary my-2" @click="fetchComments(++page.currentPage)">加载更多</button>
         </nav>
       </template>
       <template v-if="comments.length === 0">
