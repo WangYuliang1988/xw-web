@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { computed, nextTick, ref } from 'vue'
-import { RouterLink, RouterView, useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useUserStore } from './stores/user'
 import { useAxios } from './composables/request'
 
 // 用户信息
 const userStore = useUserStore()
+// 路由信息
+const route = useRoute()
+const router = useRouter()
 
 // 顶部栏更新相关逻辑
 const reloadHeader = ref(true)
@@ -13,6 +16,10 @@ async function logout() {
   try {
     await useAxios().get('/users/logout')
     userStore.clearUser()
+    // 如果是在管理页面退出，则回到主页
+    if (route.path.startsWith('/manage/')) {
+      router.replace('/')
+    }
   } catch (error) {
     console.log('fail to logout with error: ' + error)
   } finally {
@@ -24,7 +31,6 @@ async function logout() {
 }
 
 // 控制顶部栏展示样式
-const route = useRoute()
 const hideHeaderButtons = computed(() => {
   return ['/login', '/register'].includes(route.path)
 })

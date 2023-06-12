@@ -59,6 +59,10 @@ export default {
       try {
         await this.$axios.get('/users/logout')
         this.$store.commit('clearUser')
+        // 如果是在管理页面退出，则回到主页
+        if (this.$route.path.startsWith('/manage/')) {
+          this.$router.replace('/')
+        }
       } catch (error) {
         console.log('fail to logout with error: ' + error)
       } finally {

@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import store from "../store"
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
@@ -83,10 +84,17 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  // 设置页面标题
   if (to.meta.title) {
     document.title = to.meta.title
   }
-  next()
+  // 检查权限并跳转登录页面
+  const user = store.getters.user
+  if (to.path.startsWith("/manage/") && !user?.admin) {
+    next("/login")
+  } else {
+    next()
+  }
 })
 
 export default router
