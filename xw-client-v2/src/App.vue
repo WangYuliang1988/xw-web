@@ -52,7 +52,7 @@ export default {
     }
   },
   created() {
-    console.log('xw-client started')
+    console.log('xw-client-v2 started')
   },
   methods: {
     async logout() {

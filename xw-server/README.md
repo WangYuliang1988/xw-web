@@ -1,11 +1,13 @@
 # 工程简介
-基于 Node.js 开发的后端服务，完全 JavaScript 语言编写，提供 REST 风格的API接口。
+
+基于 Node.js 开发的后端服务，完全 JavaScript 语言编写，提供 REST 风格的 API 接口。
 
 使用 Koa 作为 Web 框架，参考：https://www.koajs.com.cn/
 使用 Sequelize 作为 ORM 框架，参考：https://www.sequelize.cn/
 
 # 目录结构
-```python
+
+```sh
 xw-server/                      # 根目录
 |
 +- apis/                        # 处理各类接口请求
