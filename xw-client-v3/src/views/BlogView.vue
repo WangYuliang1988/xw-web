@@ -6,6 +6,7 @@ import { useRoute } from 'vue-router'
 import dayjs from 'dayjs'
 import xwImg from '@/assets/xuewen.png'
 import FormTextarea from '@/components/FormTextarea.vue'
+import type { Blog } from '@/types/xw'
 
 const route = useRoute()
 const userStore = useUserStore()

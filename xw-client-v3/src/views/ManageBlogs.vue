@@ -3,6 +3,7 @@ import { useAxios } from '@/composables/request.js'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import ManagementNavigation from '@/components/ManagementNavigation.vue'
+import type { Page, Blog } from '@/types/xw'
 
 const router = useRouter()
 

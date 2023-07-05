@@ -2,6 +2,7 @@
 import { useAxios } from '@/composables/request.js'
 import { ref } from 'vue'
 import ManagementNavigation from '@/components/ManagementNavigation.vue'
+import type { Page, Comment } from '@/types/xw'
 
 const page = ref<Page>()
 const comments = ref<Array<Comment>>([])

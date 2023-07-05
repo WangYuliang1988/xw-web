@@ -8,14 +8,6 @@ interface User {
   createTime: number
 }
 
-interface Page {
-  currentPage: number
-  pageSize: number
-  hasPrevious: boolean
-  totalPage: number
-  hasNext: boolean
-}
-
 interface Blog {
   id: string
   userId: string
@@ -39,3 +31,13 @@ interface Comment {
   userName: string
   createTime: number
 }
+
+interface Page {
+  currentPage: number
+  pageSize: number
+  hasPrevious: boolean
+  totalPage: number
+  hasNext: boolean
+}
+
+export type { User, Blog, Comment, Page }

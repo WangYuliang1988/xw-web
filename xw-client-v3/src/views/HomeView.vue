@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useAxios } from '@/composables/request.js'
+import type { Page, Blog } from '@/types/xw'
 import dayjs from 'dayjs'
 import { ref } from 'vue'
 

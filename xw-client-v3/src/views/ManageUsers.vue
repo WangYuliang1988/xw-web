@@ -3,6 +3,7 @@ import { useAxios } from '@/composables/request.js'
 import { ref } from 'vue'
 import dayjs from 'dayjs'
 import ManagementNavigation from '@/components/ManagementNavigation.vue'
+import type { Page, User } from '@/types/xw'
 
 const page = ref<Page>()
 const users = ref<Array<User>>([])

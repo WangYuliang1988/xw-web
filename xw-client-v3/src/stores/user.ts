@@ -1,3 +1,4 @@
+import type { User } from '@/types/xw'
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
