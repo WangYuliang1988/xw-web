@@ -64,7 +64,7 @@ async function deleteBlog(blog: Blog) {
               <td>
                 <router-link v-bind:to="'/blog/' + blog.id">{{ blog.name }}</router-link>
               </td>
-              <td><span v-text="blog.userName"></span></td>
+              <td><span v-text="blog.author"></span></td>
               <td>
                 <button class="btn btn-sm btn-outline-primary mx-1" v-on:click="editBlog(blog)">
                   编辑

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useAxios } from '@/composables/request.js'
 import type { Page, Blog } from '@/types/xw'
-import dayjs from 'dayjs'
 import { ref } from 'vue'
 
 const page = ref<Page>()
@@ -29,10 +28,7 @@ async function fetchBlogs(pageIndex: number) {
           <h2>
             <RouterLink :to="`/blog/${blog.id}`">{{ blog.name }}</RouterLink>
           </h2>
-          <p
-            class="blog-meta"
-            v-text="'发表于 ' + dayjs(blog.createTime * 1000).format('YYYY-MM-DD HH:mm:ss')"
-          ></p>
+          <p class="blog-meta" v-text="blog.dynasty + ' · ' + blog.author"></p>
           <p v-text="blog.summary"></p>
           <p><RouterLink :to="`/blog/${blog.id}`">继续阅读</RouterLink></p>
         </div>

@@ -52,10 +52,7 @@ async function makeComment() {
     <div class="blog">
       <div v-if="blog" class="single-box">
         <h2 v-text="blog.name"></h2>
-        <p
-          class="blog-meta"
-          v-text="'发表于 ' + dayjs(blog.createTime * 1000).format('YYYY-MM-DD HH:mm:ss')"
-        ></p>
+        <p class="blog-meta" v-text="blog.dynasty + ' · ' + blog.author"></p>
         <p v-html="blog.html"></p>
       </div>
       <div class="single-box mt-4">

@@ -14,6 +14,8 @@ interface Blog {
   userName: string
   userImage: string
   name: string
+  author: string
+  dynasty: string
   summary: string
   content: string
   html?: string

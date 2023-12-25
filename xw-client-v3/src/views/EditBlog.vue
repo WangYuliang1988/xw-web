@@ -11,6 +11,8 @@ const route = useRoute()
 const router = useRouter()
 
 const name = ref('')
+const author = ref('')
+const dynasty = ref('')
 const summary = ref('')
 const content = ref('')
 const serverFeedback = ref('')
@@ -23,6 +25,8 @@ async function fetchBlog() {
   if (blogId) {
     const rs = await useAxios().get(`/blogs/${blogId}`)
     name.value = rs.data.name
+    author.value = rs.data.author
+    dynasty.value = rs.data.dynasty
     summary.value = rs.data.summary
     content.value = rs.data.content
   }
@@ -36,6 +40,8 @@ async function onSubmit() {
     const url = blogId ? `/blogs/${blogId}/update` : '/blogs/create'
     const rs = await useAxios().post(url, {
       name: name.value,
+      author: author.value,
+      dynasty: dynasty.value,
       summary: summary.value,
       content: content.value
     })
@@ -62,18 +68,38 @@ async function onSubmit() {
         <FormInput
           id="inputName"
           type="text"
-          label="日志标题"
+          label="标题"
           v-model="name"
-          placeholder="请输入日志标题"
+          placeholder="请输入标题"
+          :required="true"
+        />
+      </div>
+      <div class="mb-3">
+        <FormInput
+          id="inputAuthor"
+          type="text"
+          label="作者"
+          v-model="author"
+          placeholder="请输入作者"
+          :required="true"
+        />
+      </div>
+      <div class="mb-3">
+        <FormInput
+          id="inputDynasty"
+          type="text"
+          label="朝代"
+          v-model="dynasty"
+          placeholder="请输入朝代"
           :required="true"
         />
       </div>
       <div class="mb-3">
         <FormTextarea
           id="inputSummary"
-          label="日志摘要"
+          label="摘要"
           v-model="summary"
-          placeholder="请输入日志摘要"
+          placeholder="请输入摘要"
           :rows="4"
           :required="true"
         ></FormTextarea>
@@ -81,9 +107,9 @@ async function onSubmit() {
       <div class="mb-3">
         <FormTextarea
           id="inputContent"
-          label="日志内容"
+          label="内容"
           v-model="content"
-          placeholder="请输入日志内容"
+          placeholder="请输入内容"
           :rows="16"
           :required="true"
         ></FormTextarea>
