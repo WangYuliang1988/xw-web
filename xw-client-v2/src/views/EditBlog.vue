@@ -9,16 +9,24 @@
     <form class="form-blog" v-on:submit.prevent="onSubmit">
       <p v-if="serverFeedback" class="server-feedback text-center">{{ serverFeedback }}</p>
       <div class="mb-3">
-        <label for="inputName" class="sr-only">日志标题</label>
-        <input type="text" class="form-control" id="inputName" v-model="name" placeholder="请输入日志标题" required>
+        <label for="inputName" class="sr-only">标题</label>
+        <input type="text" class="form-control" id="inputName" v-model="name" placeholder="请输入标题" required>
       </div>
       <div class="mb-3">
-        <label for="inputSummary" class="sr-only">日志摘要</label>
-        <textarea class="form-control" id="inputSummary" v-model="summary" placeholder="请输入日志摘要" rows="4" required></textarea>
+        <label for="inputAuthor" class="sr-only">作者</label>
+        <input type="text" class="form-control" id="inputAuthor" v-model="author" placeholder="请输入作者" required>
       </div>
       <div class="mb-3">
-        <label for="inputContent" class="sr-only">日志内容</label>
-        <textarea class="form-control" id="inputContent" v-model="content" placeholder="请输入日志内容" rows="16" required></textarea>
+        <label for="inputDynasty" class="sr-only">朝代</label>
+        <input type="text" class="form-control" id="inputDynasty" v-model="dynasty" placeholder="请输入朝代" required>
+      </div>
+      <div class="mb-3">
+        <label for="inputSummary" class="sr-only">摘要</label>
+        <textarea class="form-control" id="inputSummary" v-model="summary" placeholder="请输入摘要" rows="4" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="inputContent" class="sr-only">内容</label>
+        <textarea class="form-control" id="inputContent" v-model="content" placeholder="请输入内容" rows="16" required></textarea>
       </div>
       <div class="text-center"><button type="submit" class="btn btn-md btn-primary mt-2">发布</button></div>
     </form>
@@ -31,6 +39,8 @@ export default {
   data() {
     return {
       name: null,
+      author: null,
+      dynasty: null,
       summary: null,
       content: null,
       disableSubmit: false,
@@ -46,6 +56,8 @@ export default {
     if (this.id) { // 编辑已有文章
       let rs = await this.$axios.get(`/blogs/${this.id}`)
       this.name = rs.data.name
+      this.author = rs.data.author
+      this.dynasty = rs.data.dynasty
       this.summary = rs.data.summary
       this.content = rs.data.content
     }
@@ -58,6 +70,8 @@ export default {
         let url = this.id ? `/blogs/${this.id}/update` : '/blogs/create'
         let rs = await this.$axios.post(url, {
           name: this.name,
+          author: this.author,
+          dynasty: this.dynasty,
           summary: this.summary,
           content: this.content
         })

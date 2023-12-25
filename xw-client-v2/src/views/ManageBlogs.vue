@@ -19,7 +19,7 @@
           <tbody>
             <tr v-for="blog in blogs" :key="blog.id">
               <td><router-link v-bind:to="'/blog/' + blog.id">{{ blog.name }}</router-link></td>
-              <td><span v-text="blog.userName"></span></td>
+              <td><span v-text="blog.author"></span></td>
               <td>
                 <button class="btn btn-sm btn-outline-primary ml-1 mr-1" v-on:click="editBlog(blog)">编辑</button>
                 <button class="btn btn-sm btn-outline-secondary ml-1 mr-1" v-on:click="deleteBlog(blog)">删除</button>

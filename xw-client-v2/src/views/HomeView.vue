@@ -5,7 +5,7 @@
       <template v-if="blogs.length > 0">
         <div class="blog-post" v-for="blog in blogs" :key="blog.id">
           <h2 class="blog-post-title"><router-link :to="`/blog/${blog.id}`">{{ blog.name }}</router-link></h2>
-          <p class="blog-post-meta" v-text="'发表于 ' + $dayjs(blog.createTime * 1000).format('YYYY-MM-DD HH:mm:ss')"></p>
+          <p class="blog-post-meta" v-text="blog.dynasty + ' · ' + blog.author"></p>
           <p v-text="blog.summary"></p>
           <p><router-link :to="`/blog/${blog.id}`">继续阅读</router-link></p>
           <button v-if="page.hasNext" class="btn btn-outline-primary mb-3" @click="fetchBlogs(++page.currentPage)">查看更多</button>
