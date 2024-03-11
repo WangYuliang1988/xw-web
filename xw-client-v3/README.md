@@ -6,8 +6,8 @@
 
 工程创建后，参考官方建议，对 Visual Studio Code 开发环境进行如下配置，以提升开发效率：
 
-1. 安装 [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)插件，并针对本项目禁用 `Vetur`；
-2. 安装 [TypeScript Vue Plugin](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)，并针对本项目[禁用内置的 TypeScript 插件](https://cn.vuejs.org/guide/typescript/overview.html#volar-takeover-mode)。
+1. 安装 [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar)插件，并针对本项目禁用 `Vetur`；
+2. ~~安装 [TypeScript Vue Plugin](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)，并针对本项目[禁用内置的 TypeScript 插件](https://cn.vuejs.org/guide/typescript/overview.html#volar-takeover-mode)。~~ 从 Vue - Offical 插件 2.0.0 版本开始不再需要该操作。
 
 ## 目录结构
 
