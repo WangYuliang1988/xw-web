@@ -64,7 +64,7 @@ const hideHeaderButtons = computed(() => {
   <footer class="base-footer">
     <p>
       Powered by <a href="https://github.com/WangYuliang1988" target="_blank">WangYuliang</a>.
-      Copyright &copy; 2023.
+      Copyright &copy; {{ new Date().getFullYear() }}.
     </p>
     <p>
       <a href="https://github.com/WangYuliang1988" target="_blank">WangYuliang</a>. All rights
