@@ -2,7 +2,6 @@
   "name": "xw-web",
   "version": "1.0.0",
   "description": "Tools written by JavaScript to deploy projects.",
-  "main": "deploy.js",
   "scripts": {},
   "author": "Yuliang Wang",
   "license": "GPLv3",
