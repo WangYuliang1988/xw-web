@@ -22,7 +22,7 @@
       <router-view/>
     </main>
     <footer class="base-footer">
-      <p>Powered by <a href="https://github.com/WangYuliang1988" target="_blank">WangYuliang</a>. Copyright &copy; 2023.</p>
+      <p>Powered by <a href="https://github.com/WangYuliang1988" target="_blank">WangYuliang</a>. Copyright &copy; {{ year }}.</p>
       <p>
         <a href="https://github.com/WangYuliang1988" target="_blank">WangYuliang</a>. All rights reserved.
         <a target="_blank" href="http://beian.miit.gov.cn/" class="ml-2">豫ICP备19016855号</a>
@@ -45,6 +45,9 @@ export default {
   computed: {
     user() {
       return this.$store.getters.user
+    },
+    year() {
+      return new Date().getFullYear()
     },
     hideHeaderButtons() {
       // 登录和注册页面需隐藏顶部按钮区域，同时设置标题居中
@@ -75,7 +78,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="scss">
 // 导入 Bootstrap 样式，可直接在代码中使用如 col-6 等 Bootstrap 定义的样式
